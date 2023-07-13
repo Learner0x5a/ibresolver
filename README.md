@@ -2,7 +2,7 @@
 
 This is a QEMU user-mode plugin for resolving indirect branches. The plugin supports various architectures and uses a configurable disassembly backend to detect indirect jumps and calls. When a branch found by the backend is taken, the callsite and destination are written to a .csv.
 
-This is a fork with fixed implementation of BinaryNinja backend for x86_64 only, the simple backend supports both arm32 and x86_64.
+**This is a fork with fixed implementation of BinaryNinja backend for x86_64 only, the simple backend supports both arm32 and x86_64.**
 
 # Building and prerequisites
 
