@@ -2,6 +2,8 @@
 
 This is a QEMU user-mode plugin for resolving indirect branches. The plugin supports various architectures and uses a configurable disassembly backend to detect indirect jumps and calls. When a branch found by the backend is taken, the callsite and destination are written to a .csv.
 
+This is a fork with fixed implementation of BinaryNinja backend for x86_64 only, the simple backend supports both arm32 and x86_64.
+
 # Building and prerequisites
 
 This plugin requires a patched version of QEMU. To download and build QEMU do
@@ -42,6 +44,8 @@ After installing [binaryninja](https://docs.binary.ninja/getting-started.html), 
 ```
 $ git submodule update
 ```
+
+**NOTE: Building the API with a mismatched version of the core is unsupported. Check api_REVISION.txt (in the base directory of your binja install) for the proper API version to use.**
 
 Then [build the binaryninja API](https://github.com/Vector35/binaryninja-api#build-instructions) and build this plugin with
 
@@ -102,4 +106,4 @@ where each line has the callsite and destination of every indirect branch in the
 
 # Supported architectures
 
-This plugin currently works on x86-64 and arm32 binaries. Support for other architectures may be added through custom disassembly backends, though this has not been tested yet. Architectures with jump delay slots (e.g. MIPS, SPARC), multithreaded programs and JITs are currently not expected to work.
+Support for other architectures may be added through custom disassembly backends, though this has not been tested yet. Architectures with jump delay slots (e.g. MIPS, SPARC), multithreaded programs and JITs are currently not expected to work.
