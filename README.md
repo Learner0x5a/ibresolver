@@ -43,6 +43,8 @@ After installing [binaryninja](https://docs.binary.ninja/getting-started.html), 
 
 ```
 $ git submodule update
+$ cd binaryninja-api
+$ git checkout <refer_to_api_REVISION.txt>
 ```
 
 **NOTE: Building the API with a mismatched version of the core is unsupported. Check api_REVISION.txt (in the base directory of your binja install) for the proper API version to use.**
